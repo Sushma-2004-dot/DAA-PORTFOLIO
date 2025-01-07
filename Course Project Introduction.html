@@ -26,6 +26,21 @@
         .team-member span, .module-detail span {
             font-weight: bold;
         }
+        .module-section {
+            display: none; /* Hide all modules by default */
+        }
+        .module-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .module-btn:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -48,120 +63,95 @@
         </div>
     </div>
 
-    <div class="module-section">
+    <!-- Buttons to toggle visibility of modules -->
+    <button class="module-btn" onclick="toggleModule('module1')">Module 1: Matchmaking</button>
+    <button class="module-btn" onclick="toggleModule('module2')">Module 2: Minimize Latency</button>
+    <button class="module-btn" onclick="toggleModule('module3')">Module 3: Efficient Communication</button>
+    <button class="module-btn" onclick="toggleModule('module4')">Module 4: Packet Loss Memory</button>
+
+    <!-- Module 1: Matchmaking -->
+    <div id="module1" class="module-section">
         <h2>Module 1: Matchmaking</h2>
         <div class="module-detail">
             <span>Users:</span> Commuter, System admin, Train operator
         </div>
         <div class="module-detail">
-            <span>Functions:</span> Display Players
- Add Players
- Delete Players
- Most Active Player
- Least Active Player
- Selection Sort Based on Score
- Find Most Frequent Words in Chats
- BFS - Find Player Connections
- DFS - Find Player Connections
+            <span>Functions:</span> Display Players, Add Players, Delete Players, Most Active Player, Least Active Player, Selection Sort Based on Score, Find Most Frequent Words in Chats, BFS - Find Player Connections, DFS - Find Player Connections
         </div>
         <div class="module-detail">
-            <span>Algorithms:</span> BFS AND DFS Algorithms
+            <span>Algorithms:</span> BFS and DFS Algorithms
         </div>
         <div class="module-detail">
-            <span>Data Structure:</span> queues,stack,hash,linear search and mapping.
+            <span>Data Structure:</span> Queues, Stack, Hash, Linear Search, Mapping
         </div>
     </div>
 
-    <div class="module-section">
+    <!-- Module 2: Minimize Latency -->
+    <div id="module2" class="module-section">
         <h2>Module 2: Minimize Latency</h2>
         <div class="module-detail">
             <span>Users:</span> Commuter, Admin, Meteorologist, Traffic Department
         </div>
         <div class="module-detail">
-            <span>Functions:</span>Show All Gamers
- Start a New Chat Challenge
- Sort Gamers by Score
- Modify Gamer Details
- Latency in the Game Networking
+            <span>Functions:</span> Show All Gamers, Start a New Chat Challenge, Sort Gamers by Score, Modify Gamer Details, Latency in the Game Networking
         </div>
         <div class="module-detail">
-            <span>Algorithms:</span> Dijkstra's Shortest Path Algorithm
-
-Bellman-Ford Algorithm
-
-Floyd-Warshall Algorithm
-
-Queues (for message transmission)
-
-Arrays (for storing distances and paths)
-
-Linked Lists (for dynamic player connections)
+            <span>Algorithms:</span> Dijkstra's Shortest Path Algorithm, Bellman-Ford Algorithm, Floyd-Warshall Algorithm, Queues (for message transmission), Arrays (for storing distances and paths), Linked Lists (for dynamic player connections)
         </div>
         <div class="module-detail">
-            <span>Data Structures:</span> Hash Table,Queue and Priority Queue
+            <span>Data Structures:</span> Hash Table, Queue, Priority Queue
         </div>
     </div>
 
-    <div class="module-section">
+    <!-- Module 3: Efficient Communication -->
+    <div id="module3" class="module-section">
         <h2>Module 3: Efficient Communication</h2>
         <div class="module-detail">
             <span>Users:</span> Commuter, System admin, Traffic Department
         </div>
         <div class="module-detail">
-            <span>Functions:</span>Add Message
- Display Messages
- Delete Message
- Clear Chat History
- Search Messages
- Edit Message
+            <span>Functions:</span> Add Message, Display Messages, Delete Message, Clear Chat History, Search Messages, Edit Message
         </div>
         <div class="module-detail">
-            <span>Algorithms:</span>  Heap Sort
-
-Rabin-Karp Algorithm
-
-Boyer-Moore Algorithm
-
-KMP Algorithm
-
-Queues (for message storage and priority)
-
-Arrays (for storing chat logs/messages)
-
-Linked Lists (for dynamic chat history management)
+            <span>Algorithms:</span> Heap Sort, Rabin-Karp Algorithm, Boyer-Moore Algorithm, KMP Algorithm, Queues (for message storage and priority), Arrays (for storing chat logs/messages), Linked Lists (for dynamic chat history management)
         </div>
         <div class="module-detail">
-            <span>Data Structures:</span> Hash Table,Priority Queue and trees.
+            <span>Data Structures:</span> Hash Table, Priority Queue, Trees
         </div>
     </div>
 
-    <div class="module-section">
-        <h2>Module 4: Pocket Loss Memory</h2>
+    <!-- Module 4: Packet Loss Memory -->
+    <div id="module4" class="module-section">
+        <h2>Module 4: Packet Loss Memory</h2>
         <div class="module-detail">
             <span>Users:</span> System admin, Transit operator, Urban planner
         </div>
         <div class="module-detail">
-            <span>Functions:</span> Players
- Corrupted packets
- Loss Probability
- Highest Packets Received per Player
- Total Number of Packets
+            <span>Functions:</span> Players, Corrupted packets, Loss Probability, Highest Packets Received per Player, Total Number of Packets
         </div>
         <div class="module-detail">
-            <span>Algorithms:</span> Brute Force String Search
-
-Floyd-Warshall Algorithm
-
-Queues for packet management
-
-Linked Lists (for retransmission tracking)
-
-Arrays (for packet buffering)
+            <span>Algorithms:</span> Brute Force String Search, Floyd-Warshall Algorithm, Queues for packet management, Linked Lists (for retransmission tracking), Arrays (for packet buffering)
         </div>
         <div class="module-detail">
-            <span>Data Structures:</span> Queue,Graph, Adjacency Matrix, Hash Map and linear search.
+            <span>Data Structures:</span> Queue, Graph, Adjacency Matrix, Hash Map, Linear Search
         </div>
     </div>
+
+    <script>
+        function toggleModule(moduleId) {
+            // Hide all modules
+            const modules = document.querySelectorAll('.module-section');
+            modules.forEach(module => {
+                module.style.display = 'none';
+            });
+
+            // Show the selected module
+            const selectedModule = document.getElementById(moduleId);
+            if (selectedModule) {
+                selectedModule.style.display = 'block';
+            }
+        }
+    </script>
 
 </body>
 </html>
