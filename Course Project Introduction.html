@@ -3,226 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Details - Game Networking Management</title>
+    <title>Team 16 - Game Networking Management</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f9f9f9;
-            color: #333;
+            line-height: 1.6;
+            background-color: #ffe6f2;
+            color: #120909f1;
         }
         h1 {
+            color: #ad1456b3;
             text-align: center;
-            color: #444;
-            font-size: 2.5rem;
+            background-color: #f8bbd0;
+            padding: 15px;
+            border-radius: 5px;
         }
         h2 {
-            color: #555;
+            color: #d81b60b7;
         }
-        .team-section, .module-section {
-            background-color: #fff;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        h3 {
+            color: #880e4f96;
         }
-        .team-member, .module-detail {
-            margin-bottom: 10px;
-        }
-        .team-member span, .module-detail span {
-            font-weight: bold;
-            color: #222;
-        }
-        .button-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .module-btn {
-            background-color: #007BFF;
-            color: #fff;
-            padding: 15px 20px;
-            margin: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: transform 0.2s, background-color 0.3s;
-        }
-        .module-btn:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-        .module-form {
-            margin-top: 20px;
-            display: none; /* Initially hidden */
-        }
-        textarea {
+        table {
             width: 100%;
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-top: 10px;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff0f5;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .form-btn {
-            background-color: #28a745;
-            color: white;
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #d81b606b;
+            color: #ffffff;
+        }
+        td {
+            background-color: #fce4ec;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .module {
+            margin-bottom: 30px;
+            background-color: #fce4ec;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .module ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .module ul li {
+            margin-bottom: 8px;
+            color: #090707ea;
+        }
+        .view-code-btn {
+            display: inline-block;
+            margin: 10px 0;
             padding: 10px 20px;
-            border: none;
+            background-color: #d81b60b7;
+            color: #ffffff;
+            text-decoration: none;
             border-radius: 5px;
-            margin-top: 10px;
-            cursor: pointer;
-            font-size: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .form-btn:hover {
-            background-color: #218838;
-        }
-        .code-section {
-            margin-top: 15px;
-            padding: 10px;
-            background-color: #f4f4f4;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .code-section h3 {
-            margin: 0 0 10px;
-            color: #444;
-        }
-        .code-section pre {
-            margin: 0;
-            white-space: pre-wrap;
-            word-wrap: break-word;
+        .view-code-btn:hover {
+            background-color: #ad1456b3;
         }
     </style>
 </head>
 <body>
+    <h1>Team 16 - Game Networking Management</h1>
 
-    <h1>Team Details - Game Networking Management</h1>
-
-    <div class="team-section">
+    <section>
         <h2>Team Members</h2>
-        <div class="team-member">
-            <span>Sushma:</span> 02fe23bcs102
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>USN</th>
+            </tr>
+            <tr>
+                <td>Sushma</td>
+                <td>02fe23bcs102</td>
+            </tr>
+            <tr>
+                <td>Srija</td>
+                <td>02fe23bcs048</td>
+            </tr>
+            <tr>
+                <td>Netravati</td>
+                <td>02fe23bcs170</td>
+            </tr>
+            <tr>
+                <td>Akash</td>
+                <td>02fe23bcs111</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Problem Statement</h2>
+        <p><strong>Game Networking Management</strong></p>
+    </section>
+
+    <section>
+        <h2>Modules</h2>
+
+        <div class="module">
+            <h3>Module 1: Matchmaking</h3>
+            <ul>
+                <li><strong>Algorithm:</strong>selection sort
+
+BFS(breadth first search)
+
+DFS(depth first search)
+
+Hash mapping
+
+Arrays (for sorting player attributes)
+
+Adjacency list </li>
+                <li><strong>Data Structures:</strong> Hash Tables, Graphs, Linked Lists</li>
+            </ul>
+            <a href="module1_code.cpp" class="view-code-btn">View Code</a>
         </div>
-        <div class="team-member">
-            <span>Srija:</span> 02fe23bcs048
+
+        <div class="module">
+            <h3>Module 2: Minimize Latency</h3>
+            <ul>
+                <li><strong>Algorithm:</strong> selection sort
+
+BFS(breadth first search)
+
+DFS(depth first search)
+
+Hash mapping
+
+Arrays (for sorting player attributes)
+
+Adjacency list</li>
+                <li><strong>Data Structures:</strong> Arrays, Trees,queues and stack.</li>
+            </ul>
+            <a href="module2_code.cpp" class="view-code-btn">View Code</a>
         </div>
-        <div class="team-member">
-            <span>Netravati:</span> 02fe23bcs170
+
+        <div class="module">
+            <h3>Module 3: Efficient Communication</h3>
+            <ul>
+                <li><strong>Algorithm:</strong>Heap Sort
+
+Rabin-Karp Algorithm
+
+Boyer-Moore Algorithm
+
+KMP Algorithm
+
+Queues (for message storage and priority)
+
+Arrays (for storing chat logs/messages)
+
+Linked Lists (for dynamic chat history management) </li>
+                <li><strong>Data Structures:</strong> Heaps, Graphs,arrays and queues.</li>
+            </ul>
+            <a href="module3_code.cpp" class="view-code-btn">View Code</a>
         </div>
-        <div class="team-member">
-            <span>Akash:</span> 02fe23bcs111
+
+        <div class="module">
+            <h3>Module 4: Packet Loss Memory</h3>
+                <li><strong>Algorithm:</strong> Heap Sort
+
+Rabin-Karp Algorithm
+
+Boyer-Moore Algorithm
+
+KMP Algorithm
+
+Queues (for message storage and priority)
+
+Arrays (for storing chat logs/messages)
+
+Linked Lists (for dynamic chat history management)</li>
+                <li><strong>Data Structures:</strong> arrays,queues,Hash Maps and linked lists</li>
+            </ul>
+            <a href="module4_code.cpp" class="view-code-btn">View Code</a>
         </div>
-    </div>
-
-    <div class="button-container">
-        <button class="module-btn" onclick="toggleForm('form1')">Add Matchmaking Code</button>
-        <button class="module-btn" onclick="toggleForm('form2')">Add Minimize Latency Code</button>
-        <button class="module-btn" onclick="toggleForm('form3')">Add Efficient Communication Code</button>
-        <button class="module-btn" onclick="toggleForm('form4')">Add Packet Loss Memory Code</button>
-    </div>
-
-    <!-- Forms for Adding Code -->
-    <div id="form1" class="module-form">
-        <h2>Add Code for Matchmaking</h2>
-        <textarea id="code1" rows="6" placeholder="Enter your code or details for Matchmaking"></textarea>
-        <button class="form-btn" onclick="addCode('code1', 'module1')">Submit</button>
-    </div>
-    <div id="form2" class="module-form">
-        <h2>Add Code for Minimize Latency</h2>
-        <textarea id="code2" rows="6" placeholder="Enter your code or details for Minimize Latency"></textarea>
-        <button class="form-btn" onclick="addCode('code2', 'module2')">Submit</button>
-    </div>
-    <div id="form3" class="module-form">
-        <h2>Add Code for Efficient Communication</h2>
-        <textarea id="code3" rows="6" placeholder="Enter your code or details for Efficient Communication"></textarea>
-        <button class="form-btn" onclick="addCode('code3', 'module3')">Submit</button>
-    </div>
-    <div id="form4" class="module-form">
-        <h2>Add Code for Packet Loss Memory</h2>
-        <textarea id="code4" rows="6" placeholder="Enter your code or details for Packet Loss Memory"></textarea>
-        <button class="form-btn" onclick="addCode('code4', 'module4')">Submit</button>
-    </div>
-
-    <!-- Module Sections -->
-    <div id="module1" class="module-section">
-        <h2>Module 1: Matchmaking</h2>
-        <div class="module-detail">
-            <span>Users:</span> Commuter, System admin, Train operator
-        </div>
-        <div class="module-detail">
-            <span>Functions:</span> Display Players, Add Players, Delete Players, Most Active Player, Least Active Player, Selection Sort Based on Score, Find Most Frequent Words in Chats, BFS - Find Player Connections, DFS - Find Player Connections
-        </div>
-    </div>
-
-    <div id="module2" class="module-section">
-        <h2>Module 2: Minimize Latency</h2>
-        <div class="module-detail">
-            <span>Users:</span> Commuter, Admin, Meteorologist, Traffic Department
-        </div>
-        <div class="module-detail">
-            <span>Functions:</span> Show All Gamers, Start a New Chat Challenge, Sort Gamers by Score, Modify Gamer Details, Latency in the Game Networking
-        </div>
-    </div>
-
-    <div id="module3" class="module-section">
-        <h2>Module 3: Efficient Communication</h2>
-        <div class="module-detail">
-            <span>Users:</span> Commuter, System admin, Traffic Department
-        </div>
-        <div class="module-detail">
-            <span>Functions:</span> Add Message, Display Messages, Delete Message, Clear Chat History, Search Messages, Edit Message
-        </div>
-    </div>
-
-    <div id="module4" class="module-section">
-        <h2>Module 4: Packet Loss Memory</h2>
-        <div class="module-detail">
-            <span>Users:</span> System admin, Transit operator, Urban planner
-        </div>
-        <div class="module-detail">
-            <span>Functions:</span> Players, Corrupted Packets, Loss Probability, Highest Packets Received per Player, Total Number of Packets
-        </div>
-    </div>
-
-    <script>
-        function toggleForm(formId) {
-            // Hide all forms
-            const forms = document.querySelectorAll('.module-form');
-            forms.forEach(form => form.style.display = 'none');
-
-            // Show the selected form
-            document.getElementById(formId).style.display = 'block';
-        }
-
-        function addCode(textAreaId, moduleId) {
-            const code = document.getElementById(textAreaId).value;
-            if (code.trim() !== '') {
-                const module = document.getElementById(moduleId);
-
-                // Add a code section if it doesn't already exist
-                let codeSection = module.querySelector('.code-section');
-                if (!codeSection) {
-                    codeSection = document.createElement('div');
-                    codeSection.classList.add('code-section');
-                    codeSection.innerHTML = <h3>Code:</h3>;
-                    module.appendChild(codeSection);
-                }
-
-                // Append the entered code
-                const newCode = document.createElement('pre');
-                newCode.textContent = code;
-                codeSection.appendChild(newCode);
-
-                document.getElementById(textAreaId).value = ''; // Clear textarea
-                alert('Code added successfully!');
-            } else {
-                alert('Please enter some code!');
-            }
-        }
-    </script>
-
+    </section>
 </body>
 </html>
