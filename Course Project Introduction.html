@@ -79,6 +79,22 @@
         .form-btn:hover {
             background-color: #218838;
         }
+        .code-section {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .code-section h3 {
+            margin: 0 0 10px;
+            color: #444;
+        }
+        .code-section pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
     </style>
 </head>
 <body>
@@ -184,10 +200,22 @@
         function addCode(textAreaId, moduleId) {
             const code = document.getElementById(textAreaId).value;
             if (code.trim() !== '') {
-                const newCode = document.createElement('div');
-                newCode.classList.add('module-detail');
-                newCode.innerHTML = <span>Additional Code:</span> <pre>${code}</pre>;
-                document.getElementById(moduleId).appendChild(newCode);
+                const module = document.getElementById(moduleId);
+
+                // Add a code section if it doesn't already exist
+                let codeSection = module.querySelector('.code-section');
+                if (!codeSection) {
+                    codeSection = document.createElement('div');
+                    codeSection.classList.add('code-section');
+                    codeSection.innerHTML = <h3>Code:</h3>;
+                    module.appendChild(codeSection);
+                }
+
+                // Append the entered code
+                const newCode = document.createElement('pre');
+                newCode.textContent = code;
+                codeSection.appendChild(newCode);
+
                 document.getElementById(textAreaId).value = ''; // Clear textarea
                 alert('Code added successfully!');
             } else {
