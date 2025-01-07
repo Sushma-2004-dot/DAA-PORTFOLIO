@@ -26,9 +26,6 @@
         .team-member span, .module-detail span {
             font-weight: bold;
         }
-        .module-section {
-            display: none; /* Hide all modules by default */
-        }
         .module-btn {
             background-color: #4CAF50;
             color: white;
@@ -40,6 +37,9 @@
         }
         .module-btn:hover {
             background-color: #45a049;
+        }
+        .module-form {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -63,13 +63,13 @@
         </div>
     </div>
 
-    <!-- Buttons to toggle visibility of modules -->
+    <!-- Module Buttons to Add Additional Data -->
     <button class="module-btn" onclick="toggleModule('module1')">Module 1: Matchmaking</button>
     <button class="module-btn" onclick="toggleModule('module2')">Module 2: Minimize Latency</button>
     <button class="module-btn" onclick="toggleModule('module3')">Module 3: Efficient Communication</button>
     <button class="module-btn" onclick="toggleModule('module4')">Module 4: Packet Loss Memory</button>
 
-    <!-- Module 1: Matchmaking -->
+    <!-- Add Data to Module 1: Matchmaking -->
     <div id="module1" class="module-section">
         <h2>Module 1: Matchmaking</h2>
         <div class="module-detail">
@@ -84,9 +84,14 @@
         <div class="module-detail">
             <span>Data Structure:</span> Queues, Stack, Hash, Linear Search, Mapping
         </div>
+        <div class="module-form">
+            <h3>Add More Data for Matchmaking</h3>
+            <textarea id="additionalData1" rows="4" cols="50" placeholder="Enter additional details here..."></textarea><br>
+            <button class="module-btn" onclick="addData('additionalData1', 'module1')">Add Data</button>
+        </div>
     </div>
 
-    <!-- Module 2: Minimize Latency -->
+    <!-- Add Data to Module 2: Minimize Latency -->
     <div id="module2" class="module-section">
         <h2>Module 2: Minimize Latency</h2>
         <div class="module-detail">
@@ -101,9 +106,14 @@
         <div class="module-detail">
             <span>Data Structures:</span> Hash Table, Queue, Priority Queue
         </div>
+        <div class="module-form">
+            <h3>Add More Data for Minimize Latency</h3>
+            <textarea id="additionalData2" rows="4" cols="50" placeholder="Enter additional details here..."></textarea><br>
+            <button class="module-btn" onclick="addData('additionalData2', 'module2')">Add Data</button>
+        </div>
     </div>
 
-    <!-- Module 3: Efficient Communication -->
+    <!-- Add Data to Module 3: Efficient Communication -->
     <div id="module3" class="module-section">
         <h2>Module 3: Efficient Communication</h2>
         <div class="module-detail">
@@ -118,9 +128,14 @@
         <div class="module-detail">
             <span>Data Structures:</span> Hash Table, Priority Queue, Trees
         </div>
+        <div class="module-form">
+            <h3>Add More Data for Efficient Communication</h3>
+            <textarea id="additionalData3" rows="4" cols="50" placeholder="Enter additional details here..."></textarea><br>
+            <button class="module-btn" onclick="addData('additionalData3', 'module3')">Add Data</button>
+        </div>
     </div>
 
-    <!-- Module 4: Packet Loss Memory -->
+    <!-- Add Data to Module 4: Packet Loss Memory -->
     <div id="module4" class="module-section">
         <h2>Module 4: Packet Loss Memory</h2>
         <div class="module-detail">
@@ -134,6 +149,11 @@
         </div>
         <div class="module-detail">
             <span>Data Structures:</span> Queue, Graph, Adjacency Matrix, Hash Map, Linear Search
+        </div>
+        <div class="module-form">
+            <h3>Add More Data for Packet Loss Memory</h3>
+            <textarea id="additionalData4" rows="4" cols="50" placeholder="Enter additional details here..."></textarea><br>
+            <button class="module-btn" onclick="addData('additionalData4', 'module4')">Add Data</button>
         </div>
     </div>
 
@@ -149,6 +169,19 @@
             const selectedModule = document.getElementById(moduleId);
             if (selectedModule) {
                 selectedModule.style.display = 'block';
+            }
+        }
+
+        function addData(textAreaId, moduleId) {
+            const additionalData = document.getElementById(textAreaId).value;
+            if (additionalData.trim() !== '') {
+                const newDetail = document.createElement('div');
+                newDetail.classList.add('module-detail');
+                newDetail.innerHTML = <span>Additional Data:</span> ${additionalData};
+                document.getElementById(moduleId).appendChild(newDetail);
+                document.getElementById(textAreaId).value = ''; // Clear the textarea
+            } else {
+                alert('Please enter some data before adding.');
             }
         }
     </script>
