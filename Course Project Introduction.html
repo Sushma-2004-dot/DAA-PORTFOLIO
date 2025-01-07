@@ -6,40 +6,78 @@
     <title>Team Details - Game Networking Management</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 20px;
-            background-color: #f4f4f4;
-        }
-        h1, h2 {
+            background-color: #f9f9f9;
             color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+            font-size: 2.5rem;
+        }
+        h2 {
+            color: #555;
         }
         .team-section, .module-section {
             background-color: #fff;
-            padding: 15px;
+            padding: 20px;
             margin: 15px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .team-member, .module-detail {
             margin-bottom: 10px;
         }
         .team-member span, .module-detail span {
             font-weight: bold;
+            color: #222;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
         .module-btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            margin: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 15px 20px;
+            margin: 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s, background-color 0.3s;
         }
         .module-btn:hover {
-            background-color: #45a049;
+            background-color: #0056b3;
+            transform: scale(1.05);
         }
         .module-form {
             margin-top: 20px;
+            display: none; /* Initially hidden */
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .form-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .form-btn:hover {
+            background-color: #218838;
         }
     </style>
 </head>
@@ -63,13 +101,36 @@
         </div>
     </div>
 
-    <!-- Module Buttons to Add Additional Data -->
-    <button class="module-btn" onclick="toggleModule('module1')">Module 1: Matchmaking</button>
-    <button class="module-btn" onclick="toggleModule('module2')">Module 2: Minimize Latency</button>
-    <button class="module-btn" onclick="toggleModule('module3')">Module 3: Efficient Communication</button>
-    <button class="module-btn" onclick="toggleModule('module4')">Module 4: Packet Loss Memory</button>
+    <div class="button-container">
+        <button class="module-btn" onclick="toggleForm('form1')">Add Matchmaking Code</button>
+        <button class="module-btn" onclick="toggleForm('form2')">Add Minimize Latency Code</button>
+        <button class="module-btn" onclick="toggleForm('form3')">Add Efficient Communication Code</button>
+        <button class="module-btn" onclick="toggleForm('form4')">Add Packet Loss Memory Code</button>
+    </div>
 
-    <!-- Add Data to Module 1: Matchmaking -->
+    <!-- Forms for Adding Code -->
+    <div id="form1" class="module-form">
+        <h2>Add Code for Matchmaking</h2>
+        <textarea id="code1" rows="6" placeholder="Enter your code or details for Matchmaking"></textarea>
+        <button class="form-btn" onclick="addCode('code1', 'module1')">Submit</button>
+    </div>
+    <div id="form2" class="module-form">
+        <h2>Add Code for Minimize Latency</h2>
+        <textarea id="code2" rows="6" placeholder="Enter your code or details for Minimize Latency"></textarea>
+        <button class="form-btn" onclick="addCode('code2', 'module2')">Submit</button>
+    </div>
+    <div id="form3" class="module-form">
+        <h2>Add Code for Efficient Communication</h2>
+        <textarea id="code3" rows="6" placeholder="Enter your code or details for Efficient Communication"></textarea>
+        <button class="form-btn" onclick="addCode('code3', 'module3')">Submit</button>
+    </div>
+    <div id="form4" class="module-form">
+        <h2>Add Code for Packet Loss Memory</h2>
+        <textarea id="code4" rows="6" placeholder="Enter your code or details for Packet Loss Memory"></textarea>
+        <button class="form-btn" onclick="addCode('code4', 'module4')">Submit</button>
+    </div>
+
+    <!-- Module Sections -->
     <div id="module1" class="module-section">
         <h2>Module 1: Matchmaking</h2>
         <div class="module-detail">
@@ -78,20 +139,8 @@
         <div class="module-detail">
             <span>Functions:</span> Display Players, Add Players, Delete Players, Most Active Player, Least Active Player, Selection Sort Based on Score, Find Most Frequent Words in Chats, BFS - Find Player Connections, DFS - Find Player Connections
         </div>
-        <div class="module-detail">
-            <span>Algorithms:</span> BFS and DFS Algorithms
-        </div>
-        <div class="module-detail">
-            <span>Data Structure:</span> Queues, Stack, Hash, Linear Search, Mapping
-        </div>
-        <div class="module-form">
-            <h3>Add More Data for Matchmaking</h3>
-            <textarea id="additionalData1" rows="4" cols="50" placeholder="Enter additional details here..."></textarea><br>
-            <button class="module-btn" onclick="addData('additionalData1', 'module1')">Add Data</button>
-        </div>
     </div>
 
-    <!-- Add Data to Module 2: Minimize Latency -->
     <div id="module2" class="module-section">
         <h2>Module 2: Minimize Latency</h2>
         <div class="module-detail">
@@ -100,20 +149,8 @@
         <div class="module-detail">
             <span>Functions:</span> Show All Gamers, Start a New Chat Challenge, Sort Gamers by Score, Modify Gamer Details, Latency in the Game Networking
         </div>
-        <div class="module-detail">
-            <span>Algorithms:</span> Dijkstra's Shortest Path Algorithm, Bellman-Ford Algorithm, Floyd-Warshall Algorithm, Queues (for message transmission), Arrays (for storing distances and paths), Linked Lists (for dynamic player connections)
-        </div>
-        <div class="module-detail">
-            <span>Data Structures:</span> Hash Table, Queue, Priority Queue
-        </div>
-        <div class="module-form">
-            <h3>Add More Data for Minimize Latency</h3>
-            <textarea id="additionalData2" rows="4" cols="50" placeholder="Enter additional details here..."></textarea><br>
-            <button class="module-btn" onclick="addData('additionalData2', 'module2')">Add Data</button>
-        </div>
     </div>
 
-    <!-- Add Data to Module 3: Efficient Communication -->
     <div id="module3" class="module-section">
         <h2>Module 3: Efficient Communication</h2>
         <div class="module-detail">
@@ -122,66 +159,39 @@
         <div class="module-detail">
             <span>Functions:</span> Add Message, Display Messages, Delete Message, Clear Chat History, Search Messages, Edit Message
         </div>
-        <div class="module-detail">
-            <span>Algorithms:</span> Heap Sort, Rabin-Karp Algorithm, Boyer-Moore Algorithm, KMP Algorithm, Queues (for message storage and priority), Arrays (for storing chat logs/messages), Linked Lists (for dynamic chat history management)
-        </div>
-        <div class="module-detail">
-            <span>Data Structures:</span> Hash Table, Priority Queue, Trees
-        </div>
-        <div class="module-form">
-            <h3>Add More Data for Efficient Communication</h3>
-            <textarea id="additionalData3" rows="4" cols="50" placeholder="Enter additional details here..."></textarea><br>
-            <button class="module-btn" onclick="addData('additionalData3', 'module3')">Add Data</button>
-        </div>
     </div>
 
-    <!-- Add Data to Module 4: Packet Loss Memory -->
     <div id="module4" class="module-section">
         <h2>Module 4: Packet Loss Memory</h2>
         <div class="module-detail">
             <span>Users:</span> System admin, Transit operator, Urban planner
         </div>
         <div class="module-detail">
-            <span>Functions:</span> Players, Corrupted packets, Loss Probability, Highest Packets Received per Player, Total Number of Packets
-        </div>
-        <div class="module-detail">
-            <span>Algorithms:</span> Brute Force String Search, Floyd-Warshall Algorithm, Queues for packet management, Linked Lists (for retransmission tracking), Arrays (for packet buffering)
-        </div>
-        <div class="module-detail">
-            <span>Data Structures:</span> Queue, Graph, Adjacency Matrix, Hash Map, Linear Search
-        </div>
-        <div class="module-form">
-            <h3>Add More Data for Packet Loss Memory</h3>
-            <textarea id="additionalData4" rows="4" cols="50" placeholder="Enter additional details here..."></textarea><br>
-            <button class="module-btn" onclick="addData('additionalData4', 'module4')">Add Data</button>
+            <span>Functions:</span> Players, Corrupted Packets, Loss Probability, Highest Packets Received per Player, Total Number of Packets
         </div>
     </div>
 
     <script>
-        function toggleModule(moduleId) {
-            // Hide all modules
-            const modules = document.querySelectorAll('.module-section');
-            modules.forEach(module => {
-                module.style.display = 'none';
-            });
+        function toggleForm(formId) {
+            // Hide all forms
+            const forms = document.querySelectorAll('.module-form');
+            forms.forEach(form => form.style.display = 'none');
 
-            // Show the selected module
-            const selectedModule = document.getElementById(moduleId);
-            if (selectedModule) {
-                selectedModule.style.display = 'block';
-            }
+            // Show the selected form
+            document.getElementById(formId).style.display = 'block';
         }
 
-        function addData(textAreaId, moduleId) {
-            const additionalData = document.getElementById(textAreaId).value;
-            if (additionalData.trim() !== '') {
-                const newDetail = document.createElement('div');
-                newDetail.classList.add('module-detail');
-                newDetail.innerHTML = <span>Additional Data:</span> ${additionalData};
-                document.getElementById(moduleId).appendChild(newDetail);
-                document.getElementById(textAreaId).value = ''; // Clear the textarea
+        function addCode(textAreaId, moduleId) {
+            const code = document.getElementById(textAreaId).value;
+            if (code.trim() !== '') {
+                const newCode = document.createElement('div');
+                newCode.classList.add('module-detail');
+                newCode.innerHTML = <span>Additional Code:</span> <pre>${code}</pre>;
+                document.getElementById(moduleId).appendChild(newCode);
+                document.getElementById(textAreaId).value = ''; // Clear textarea
+                alert('Code added successfully!');
             } else {
-                alert('Please enter some data before adding.');
+                alert('Please enter some code!');
             }
         }
     </script>
